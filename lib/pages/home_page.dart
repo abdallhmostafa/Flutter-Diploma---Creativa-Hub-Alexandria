@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:lottie/lottie.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,38 +6,152 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        spacing: 20,
-        children: [
-          // حط لي صورة من هنا
-          // خد بالك لازم يكون المسار كده
-          // assets/----/-----     كده صح /
-          //not assets\----\-----   كده غلط \
-          Image.asset(
-            "assets/images/nvidia models, abdallh mostafa elrabiey.PNG",
-          ),
-          Lottie.asset(
-            "assets/animations/Alphabet .json",
-            height: 200,
-            errorBuilder: (context, error, stackTrace) {
-              return Column(
+      backgroundColor: Colors.white,
+      drawer: HomeDrawer(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Text(
+          "Verve",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+        ),
+
+        actionsPadding: EdgeInsets.symmetric(horizontal: 20),
+        actions: [
+          Icon(Icons.search, size: 30),
+          SizedBox(width: 10),
+          Icon(Icons.shopping_bag_rounded, size: 30),
+        ],
+      ),
+      body: Padding(
+        padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
+        child: ListView(
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                spacing: 10,
                 children: [
-                  Icon(Icons.error_rounded, size: 40, color: Colors.red),
-                  Text(
-                        "يوجد خطأ هنااااا يا معلم",
-                        style: TextStyle(
-                          fontSize: 40,
-                          fontFamily: "Cairo",
-                          fontWeight: FontWeight.w900,
-                        ),
-                      )
-                      .animate()
-                      .fade(duration: Duration(milliseconds: 300))
-                      .slideX(),
+                  ChoiceChip(
+                    selected: true,
+                    onSelected: (value) {},
+                    showCheckmark: false,
+                    selectedColor: Colors.black,
+
+                    label: Text("All"),
+
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    labelStyle: TextStyle(color: Colors.white),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadiusGeometry.circular(20),
+                    ),
+                  ),
+                  ChoiceChip(
+                    selected: false,
+                    onSelected: (value) {},
+                    showCheckmark: false,
+                    selectedColor: Colors.black,
+
+                    label: Text("Deal"),
+                    backgroundColor: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadiusGeometry.circular(20),
+                      side: BorderSide(color: Colors.black, width: 1.5),
+                    ),
+                  ),
                 ],
-              );
+              ),
+            ),
+            SizedBox(height: 20),
+            AspectRatio(
+              aspectRatio: 16 / 9,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Hot Drops",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 28,
+                          ),
+                        ),
+                        Text(
+                          "Must have Sneakers",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                          ),
+                        ),
+                        SizedBox(height: 12),
+                        ActionChip(
+                          label: Text("Find out"),
+                          onPressed: () {},
+                          backgroundColor: Colors.black,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 8,
+                          ),
+                          labelStyle: TextStyle(color: Colors.white),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadiusGeometry.circular(20),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Expanded(child: Image.asset("assets/images/shoe img.png")),
+                  ],
+                ),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/home_card.png"),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 300, child: ListView()),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class HomeDrawer extends StatelessWidget {
+  const HomeDrawer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: Column(
+        children: [
+          Container(height: 200, color: Colors.deepPurpleAccent),
+
+          ListTile(
+            onTap: () {
+              Navigator.maybePop(context);
+              Navigator.pushNamed(context, "/profile");
             },
+            splashColor: Colors.green,
+            leading: Icon(Icons.person),
+            title: Text("Profile Page"),
+            trailing: Icon(Icons.arrow_forward_rounded),
           ),
+          Divider(),
+          ListTile(
+            onTap: () {},
+            splashColor: Colors.green,
+            leading: Icon(Icons.settings),
+            title: Text("Setting Page"),
+            trailing: Icon(Icons.arrow_forward_rounded),
+          ),
+          Divider(),
         ],
       ),
     );
