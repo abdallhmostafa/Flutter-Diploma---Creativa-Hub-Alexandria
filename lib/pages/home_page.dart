@@ -115,12 +115,22 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 300, child: ListView()),
+
+            ElevatedButton(onPressed: () {}, child: Text("Pay")),
+            TextButton.icon(
+              onPressed: () {},
+              label: Text("Do not Have an account"),
+              icon: Icon(Icons.abc_outlined),
+            ),
+            IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
+
           ],
         ),
       ),
     );
   }
+
+  void test() {}
 }
 
 class HomeDrawer extends StatelessWidget {
