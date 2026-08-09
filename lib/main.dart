@@ -18,8 +18,8 @@ class VerveApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       routes: {
-        "/": (context) => TestPage(),
-        "/login": (context) => LoginPage(),
+        "/": (context) => LoginPage(),
+        // "/login": (context) => LoginPage(),
         "/register": (context) => RegisterPage(),
         "/profile": (context) => ProfilePage(),
       },
