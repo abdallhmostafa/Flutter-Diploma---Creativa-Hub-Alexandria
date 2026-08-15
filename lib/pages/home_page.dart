@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lessons_app/components/home_banner_section.dart';
+import 'package:lessons_app/components/home_category_section.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,103 +29,9 @@ class HomePage extends StatelessWidget {
         padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
         child: ListView(
           children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                spacing: 10,
-                children: [
-                  ChoiceChip(
-                    selected: true,
-                    onSelected: (value) {},
-                    showCheckmark: false,
-                    selectedColor: Colors.black,
-
-                    label: Text("All"),
-
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    labelStyle: TextStyle(color: Colors.white),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusGeometry.circular(20),
-                    ),
-                  ),
-                  ChoiceChip(
-                    selected: false,
-                    onSelected: (value) {},
-                    showCheckmark: false,
-                    selectedColor: Colors.black,
-
-                    label: Text("Deal"),
-                    backgroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusGeometry.circular(20),
-                      side: BorderSide(color: Colors.black, width: 1.5),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            HomeCategorySection(),
             SizedBox(height: 20),
-            AspectRatio(
-              aspectRatio: 16 / 9,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Hot Drops",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 28,
-                          ),
-                        ),
-                        Text(
-                          "Must have Sneakers",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18,
-                          ),
-                        ),
-                        SizedBox(height: 12),
-                        ActionChip(
-                          label: Text("Find out"),
-                          onPressed: () {},
-                          backgroundColor: Colors.black,
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 8,
-                          ),
-                          labelStyle: TextStyle(color: Colors.white),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusGeometry.circular(20),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Expanded(child: Image.asset("assets/images/shoe img.png")),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/home_card.png"),
-                  ),
-                ),
-              ),
-            ),
-
-            ElevatedButton(onPressed: () {}, child: Text("Pay")),
-            TextButton.icon(
-              onPressed: () {},
-              label: Text("Do not Have an account"),
-              icon: Icon(Icons.abc_outlined),
-            ),
-            IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
-
+            HomeBannerSection(),
           ],
         ),
       ),
