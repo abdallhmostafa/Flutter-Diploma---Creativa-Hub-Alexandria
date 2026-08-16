@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lessons_app/components/home_banner_section.dart';
 import 'package:lessons_app/components/home_category_section.dart';
+import 'package:lessons_app/components/home_drawer.dart';
+import 'package:lessons_app/components/home_product.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -32,45 +34,54 @@ class HomePage extends StatelessWidget {
             HomeCategorySection(),
             SizedBox(height: 20),
             HomeBannerSection(),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Best Seller",
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+                TextButton(onPressed: () {}, child: Text("See all")),
+              ],
+            ),
+            SizedBox(
+              height: 400,
+              child: ListView.separated(
+                separatorBuilder: (context, index) => SizedBox(width: 15),
+                itemBuilder: (context, i) =>
+                    Product(productModel: listOfProducts[i]),
+                itemCount: listOfProducts.length,
+                scrollDirection: Axis.horizontal,
+              ),
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Jackets",
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+                TextButton(onPressed: () {}, child: Text("See all")),
+              ],
+            ),
+            GridView.builder(
+              shrinkWrap: true,
+
+              physics: NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                mainAxisExtent: 400,
+              ),
+              itemCount: listOfProducts.length,
+              itemBuilder: (context, index) =>
+                  Product(productModel: listOfProducts[index]),
+            ),
           ],
         ),
-      ),
-    );
-  }
-
-  void test() {}
-}
-
-class HomeDrawer extends StatelessWidget {
-  const HomeDrawer({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: Column(
-        children: [
-          Container(height: 200, color: Colors.deepPurpleAccent),
-
-          ListTile(
-            onTap: () {
-              Navigator.maybePop(context);
-              Navigator.pushNamed(context, "/profile");
-            },
-            splashColor: Colors.green,
-            leading: Icon(Icons.person),
-            title: Text("Profile Page"),
-            trailing: Icon(Icons.arrow_forward_rounded),
-          ),
-          Divider(),
-          ListTile(
-            onTap: () {},
-            splashColor: Colors.green,
-            leading: Icon(Icons.settings),
-            title: Text("Setting Page"),
-            trailing: Icon(Icons.arrow_forward_rounded),
-          ),
-          Divider(),
-        ],
       ),
     );
   }
