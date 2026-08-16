@@ -29,6 +29,7 @@ class VerveApp extends StatelessWidget {
       onUnknownRoute: (settings) =>
           MaterialPageRoute(builder: (context) => NotFoundPage()),
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.grey[50],
         colorSchemeSeed: Colors.deepPurpleAccent,
         brightness: Brightness.light,
         appBarTheme: AppBarTheme(
@@ -54,6 +55,7 @@ class VerveApp extends StatelessWidget {
         ),
       ),
       darkTheme: ThemeData(
+        scaffoldBackgroundColor: Colors.grey[900],
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.deepPurpleAccent,
           elevation: 0,
@@ -78,7 +80,7 @@ class VerveApp extends StatelessWidget {
           ),
         ),
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
     );
   }
 }

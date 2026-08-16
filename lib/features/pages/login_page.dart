@@ -19,7 +19,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Login Page")),
-
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
         child: Column(
@@ -211,7 +210,7 @@ class _LoginPageState extends State<LoginPage> {
                   "Terms of use",
                   style: TextStyle(fontSize: 16, color: Colors.blue),
                 ),
-                Text("&", style: TextStyle(fontSize: 16, color: Colors.black)),
+                Text("&", style: TextStyle(fontSize: 16)),
                 Text(
                   "Privacy Policy",
                   style: TextStyle(fontSize: 16, color: Colors.blue),

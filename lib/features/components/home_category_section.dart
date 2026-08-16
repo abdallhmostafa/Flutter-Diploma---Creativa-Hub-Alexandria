@@ -35,18 +35,22 @@ class ChoiseChipCategory extends StatelessWidget {
   final String chipName;
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).brightness;
     return ChoiceChip(
       selected: false,
       onSelected: (value) {},
       showCheckmark: false,
-      selectedColor: Colors.black,
+      selectedColor: theme == Brightness.dark ? Colors.white : Colors.black,
 
       label: Text(chipName),
-      backgroundColor: Colors.white,
+      backgroundColor: theme == Brightness.dark ? Colors.black : Colors.white,
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusGeometry.circular(20),
-        side: BorderSide(color: Colors.black, width: 1.5),
+        side: BorderSide(
+          color: theme == Brightness.dark ? Colors.white : Colors.black,
+          width: 1.5,
+        ),
       ),
     );
   }

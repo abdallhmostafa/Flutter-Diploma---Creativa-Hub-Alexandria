@@ -217,26 +217,15 @@ class Product extends StatelessWidget {
             ),
           ),
         ),
-        Text(
-          " The Blue Banter Co.",
-          style: TextStyle(fontSize: 16, color: Colors.grey),
-        ),
+        Text(" The Blue Banter Co.", style: TextStyle(fontSize: 16)),
         Text(
           productModel.title,
 
-          style: TextStyle(
-            fontSize: 18,
-            color: Colors.grey,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         Text(
           "\$${productModel.price}",
-          style: TextStyle(
-            fontSize: 18,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
       ],
     );

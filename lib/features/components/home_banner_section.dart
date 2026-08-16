@@ -17,11 +17,19 @@ class HomeBannerSection extends StatelessWidget {
             children: [
               Text(
                 "Hot Drops",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 28,
+                  color: Colors.black,
+                ),
               ),
               Text(
                 "Must have Sneakers",
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
               ),
               SizedBox(height: 12),
               ActionChip(

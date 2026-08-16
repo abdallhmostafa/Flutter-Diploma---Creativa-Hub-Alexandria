@@ -10,10 +10,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       drawer: HomeDrawer(),
       appBar: AppBar(
-        backgroundColor: Colors.white,
         elevation: 0,
         title: Text(
           "Verve",
