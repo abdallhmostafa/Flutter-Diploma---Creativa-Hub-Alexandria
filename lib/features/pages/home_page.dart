@@ -29,6 +29,7 @@ class HomePage extends StatelessWidget {
         padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
         child: ListView(
           children: [
+            SizedBox(height: 20),
             HomeCategorySection(),
             SizedBox(height: 20),
             HomeBannerSection(),
