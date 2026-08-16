@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class HomeDrawer extends StatelessWidget {
@@ -16,7 +15,7 @@ class HomeDrawer extends StatelessWidget {
               Navigator.maybePop(context);
               Navigator.pushNamed(context, "/profile");
             },
-            splashColor: Colors.green,
+            splashColor: Colors.deepPurpleAccent,
             leading: Icon(Icons.person),
             title: Text("Profile Page"),
             trailing: Icon(Icons.arrow_forward_rounded),
@@ -24,7 +23,7 @@ class HomeDrawer extends StatelessWidget {
           Divider(),
           ListTile(
             onTap: () {},
-            splashColor: Colors.green,
+            splashColor: Colors.deepPurpleAccent,
             leading: Icon(Icons.settings),
             title: Text("Setting Page"),
             trailing: Icon(Icons.arrow_forward_rounded),
