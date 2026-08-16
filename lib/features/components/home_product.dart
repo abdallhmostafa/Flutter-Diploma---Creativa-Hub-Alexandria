@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lessons_app/models/product_model.dart';
+import 'package:lessons_app/features/models/product_model.dart';
 
 final List<ProductModel> listOfProducts = [
   ProductModel(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lessons_app/components/home_banner_section.dart';
-import 'package:lessons_app/components/home_category_section.dart';
-import 'package:lessons_app/components/home_drawer.dart';
-import 'package:lessons_app/components/home_product.dart';
+import 'package:lessons_app/features/components/home_banner_section.dart';
+import 'package:lessons_app/features/components/home_category_section.dart';
+import 'package:lessons_app/features/components/home_drawer.dart';
+import 'package:lessons_app/features/components/home_product.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

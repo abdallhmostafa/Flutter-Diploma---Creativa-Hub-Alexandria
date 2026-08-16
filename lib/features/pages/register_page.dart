@@ -10,7 +10,7 @@ class RegisterPage extends StatelessWidget {
     log("This from Register Page");
 
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.deepPurpleAccent),
+      appBar: AppBar(title: Text("Register Page")),
       body: Padding(
         padding: const EdgeInsets.all(30),
         child: Column(

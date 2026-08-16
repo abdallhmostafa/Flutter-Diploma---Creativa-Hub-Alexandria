@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:lessons_app/pages/home_page.dart';
-import 'package:lessons_app/pages/login_page.dart';
-import 'package:lessons_app/pages/profile_page.dart';
-import 'package:lessons_app/pages/register_page.dart';
+import 'package:lessons_app/features/pages/home_page.dart';
+import 'package:lessons_app/features/pages/login_page.dart';
+import 'package:lessons_app/features/pages/not_found_page.dart';
+import 'package:lessons_app/features/pages/profile_page.dart';
+import 'package:lessons_app/features/pages/register_page.dart';
+import 'package:lessons_app/features/pages/splash_page.dart';
 
 void main(List<String> args) {
   runApp(VerveApp());
@@ -15,47 +17,68 @@ class VerveApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/",
+      initialRoute: "splash",
       routes: {
         "/": (context) => HomePage(),
+        "splash": (context) => SplashPage(),
         "/login": (context) => LoginPage(),
         "/register": (context) => RegisterPage(),
         "/profile": (context) => ProfilePage(),
       },
 
       onUnknownRoute: (settings) =>
-          MaterialPageRoute(builder: (context) => NOtFound404()),
+          MaterialPageRoute(builder: (context) => NotFoundPage()),
       theme: ThemeData(
         colorSchemeSeed: Colors.deepPurpleAccent,
         brightness: Brightness.light,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.deepPurpleAccent,
+          elevation: 0,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+          iconTheme: IconThemeData(color: Colors.white),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.deepPurpleAccent,
+            alignment: Alignment.center,
+            textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            foregroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+          ),
+        ),
       ),
       darkTheme: ThemeData(
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.deepPurpleAccent,
+          elevation: 0,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+          iconTheme: IconThemeData(color: Colors.white),
+        ),
         colorSchemeSeed: Colors.deepPurpleAccent,
         brightness: Brightness.dark,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.deepPurpleAccent,
+            alignment: Alignment.center,
+            textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            foregroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+          ),
+        ),
       ),
       themeMode: ThemeMode.light,
-    );
-  }
-}
-
-class NOtFound404 extends StatelessWidget {
-  const NOtFound404({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text("Sorry 404", style: TextStyle(fontSize: 40))),
-    );
-  }
-}
-
-class ProdcutPage extends StatelessWidget {
-  const ProdcutPage({super.key, required this.id});
-  final int id;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text("$id", style: TextStyle(fontSize: 40))),
     );
   }
 }

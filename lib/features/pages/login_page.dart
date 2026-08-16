@@ -12,18 +12,23 @@ class _LoginPageState extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
 
   final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  bool isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [
-          Expanded(
-            child: Form(
-              key: formKey,
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.all(30),
+      appBar: AppBar(title: Text("Login Page")),
+
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: Form(
+                key: formKey,
+                child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -49,8 +54,9 @@ class _LoginPageState extends State<LoginPage> {
                           Icon(Icons.language_rounded, size: 30),
                         ],
                       ),
-                      SizedBox(height: 20),
                       Text("Welcome Back", style: TextStyle(fontSize: 24)),
+                      SizedBox(height: 12),
+
                       TextFormField(
                         controller: emailController,
                         validator: (value) {
@@ -73,9 +79,9 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
 
-                      SizedBox(height: 20),
+                      SizedBox(height: 12),
                       TextFormField(
-                        autovalidateMode: AutovalidateMode.always,
+                        controller: passwordController,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return "This field can not be empty";
@@ -102,19 +108,20 @@ class _LoginPageState extends State<LoginPage> {
 
                       SizedBox(height: 20),
 
-                      SizedBox(height: 20),
-
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            height: 25,
-                            width: 25,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black, width: 2),
+                          Expanded(
+                            child: CheckboxMenuButton(
+                              value: isChecked,
+                              onChanged: (value) {
+                                setState(() {
+                                  isChecked = value ?? false;
+                                });
+                              },
+                              child: Text("Remember me"),
                             ),
                           ),
-                          SizedBox(width: 10),
-                          Text("Remember me", style: TextStyle(fontSize: 16)),
                           Text(
                             "Forget password?",
                             style: TextStyle(fontSize: 16, color: Colors.blue),
@@ -124,6 +131,7 @@ class _LoginPageState extends State<LoginPage> {
 
                       SizedBox(height: 20),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           ElevatedButton(
                             onPressed: () {
@@ -141,6 +149,11 @@ class _LoginPageState extends State<LoginPage> {
                                     ),
                                   ),
                                 );
+                                Navigator.pushNamedAndRemoveUntil(
+                                  context,
+                                  '/',
+                                  (route) => false,
+                                );
                               }
                             },
                             child: Text("Sign in"),
@@ -148,8 +161,9 @@ class _LoginPageState extends State<LoginPage> {
                           ElevatedButton(
                             onPressed: () {
                               emailController.clear();
+                              passwordController.clear();
                             },
-                            child: Text("Clear to the filed data"),
+                            child: Text("Clear the field data"),
                           ),
                         ],
                       ),
@@ -167,19 +181,19 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: 20),
 
-                      Container(
-                        padding: EdgeInsets.symmetric(vertical: 12),
+                      SizedBox(
                         width: double.infinity,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.black),
-                        ),
-                        child: Text(
-                          "Register",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/register');
+                          },
+
+                          child: Text(
+                            "Register",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
@@ -188,24 +202,24 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            spacing: 10,
-            children: [
-              Text(
-                "Terms of use",
-                style: TextStyle(fontSize: 16, color: Colors.blue),
-              ),
-              Text("&", style: TextStyle(fontSize: 16, color: Colors.black)),
-              Text(
-                "Privacy Policy",
-                style: TextStyle(fontSize: 16, color: Colors.blue),
-              ),
-            ],
-          ),
-        ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              spacing: 10,
+              children: [
+                Text(
+                  "Terms of use",
+                  style: TextStyle(fontSize: 16, color: Colors.blue),
+                ),
+                Text("&", style: TextStyle(fontSize: 16, color: Colors.black)),
+                Text(
+                  "Privacy Policy",
+                  style: TextStyle(fontSize: 16, color: Colors.blue),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -213,6 +227,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void dispose() {
     emailController.dispose();
+    passwordController.dispose();
     super.dispose();
   }
 }
