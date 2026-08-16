@@ -123,69 +123,53 @@ class Product extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          height: 330,
-          width: 235,
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 12),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(productModel.image),
-            ),
-          ),
+        Expanded(
+          child: Container(
+            width: 235,
 
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-                    child: Text(
-                      "-${productModel.discount}%",
-                      style: TextStyle(fontSize: 18, color: Colors.white),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                    ),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.favorite_border, color: Colors.red),
-                    ),
-                  ),
-                ],
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+
+                image: NetworkImage(productModel.image),
               ),
-              Row(
-                spacing: 10,
-                children: [
-                  if (productModel.isNew == true)
+            ),
+
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.red,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       padding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                       child: Text(
-                        "New",
-                        style: TextStyle(
-                          fontSize: 22,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        "-${productModel.discount}%",
+                        style: TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     ),
-
-                  if (productModel.isExcl == true)
-                    Flexible(
-                      child: Container(
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                      ),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.favorite_border, color: Colors.red),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  spacing: 10,
+                  children: [
+                    if (productModel.isNew == true)
+                      Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -195,9 +179,7 @@ class Product extends StatelessWidget {
                           vertical: 6,
                         ),
                         child: Text(
-                          "Exclusive",
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
+                          "New",
                           style: TextStyle(
                             fontSize: 22,
                             color: Colors.black,
@@ -205,10 +187,34 @@ class Product extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ),
-                ],
-              ),
-            ],
+
+                    if (productModel.isExcl == true)
+                      Flexible(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 6,
+                          ),
+                          child: Text(
+                            "Exclusive",
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 22,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
         Text(
