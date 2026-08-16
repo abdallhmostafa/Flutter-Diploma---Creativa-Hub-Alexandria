@@ -3,7 +3,6 @@ import 'package:lessons_app/pages/home_page.dart';
 import 'package:lessons_app/pages/login_page.dart';
 import 'package:lessons_app/pages/profile_page.dart';
 import 'package:lessons_app/pages/register_page.dart';
-import 'package:lessons_app/pages/test.dart';
 
 void main(List<String> args) {
   runApp(VerveApp());

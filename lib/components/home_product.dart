@@ -184,7 +184,7 @@ class Product extends StatelessWidget {
                     ),
 
                   if (productModel.isExcl == true)
-                    Expanded(
+                    Flexible(
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -196,6 +196,8 @@ class Product extends StatelessWidget {
                         ),
                         child: Text(
                           "Exclusive",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: 22,
                             color: Colors.black,

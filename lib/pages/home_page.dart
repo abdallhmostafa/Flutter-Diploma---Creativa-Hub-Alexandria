@@ -34,6 +34,7 @@ class HomePage extends StatelessWidget {
             HomeCategorySection(),
             SizedBox(height: 20),
             HomeBannerSection(),
+            SizedBox(height: 20),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
