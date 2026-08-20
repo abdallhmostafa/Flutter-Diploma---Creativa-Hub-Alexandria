@@ -10,45 +10,45 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: HomeDrawer(),
+      drawer: const HomeDrawer(),
       appBar: AppBar(
         elevation: 0,
-        title: Text(
+        title: const Text(
           "Verve",
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
         ),
 
-        actionsPadding: EdgeInsets.symmetric(horizontal: 20),
-        actions: [
+        actionsPadding: const EdgeInsets.symmetric(horizontal: 20),
+        actions: const [
           Icon(Icons.search, size: 30),
           SizedBox(width: 10),
           Icon(Icons.shopping_bag_rounded, size: 30),
         ],
       ),
       body: Padding(
-        padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
+        padding: const EdgeInsetsGeometry.symmetric(horizontal: 20),
         child: ListView(
           children: [
-            SizedBox(height: 20),
-            HomeCategorySection(),
-            SizedBox(height: 20),
-            HomeBannerSection(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
+            const HomeCategorySection(),
+            const SizedBox(height: 20),
+            const HomeBannerSection(),
+            const SizedBox(height: 20),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Best Seller",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 ),
-                TextButton(onPressed: () {}, child: Text("See all")),
+                TextButton(onPressed: () {}, child: const Text("See all")),
               ],
             ),
             SizedBox(
               height: 400,
               child: ListView.separated(
-                separatorBuilder: (context, index) => SizedBox(width: 15),
+                separatorBuilder: (context, index) => const SizedBox(width: 15),
                 itemBuilder: (context, i) =>
                     Product(productModel: listOfProducts[i]),
                 itemCount: listOfProducts.length,
@@ -59,18 +59,18 @@ class HomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Jackets",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 ),
-                TextButton(onPressed: () {}, child: Text("See all")),
+                TextButton(onPressed: () {}, child: const Text("See all")),
               ],
             ),
             GridView.builder(
               shrinkWrap: true,
 
-              physics: NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,

@@ -127,7 +127,7 @@ class Product extends StatelessWidget {
           child: Container(
             width: 235,
 
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
@@ -147,20 +147,20 @@ class Product extends StatelessWidget {
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                       child: Text(
                         "-${productModel.discount}%",
-                        style: TextStyle(fontSize: 18, color: Colors.white),
+                        style: const TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     ),
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
                       ),
                       child: IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.favorite_border, color: Colors.red),
+                        icon: const Icon(Icons.favorite_border, color: Colors.red),
                       ),
                     ),
                   ],
@@ -174,11 +174,11 @@ class Product extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 8,
                           vertical: 6,
                         ),
-                        child: Text(
+                        child: const Text(
                           "New",
                           style: TextStyle(
                             fontSize: 22,
@@ -195,11 +195,11 @@ class Product extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                             horizontal: 8,
                             vertical: 6,
                           ),
-                          child: Text(
+                          child: const Text(
                             "Exclusive",
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
@@ -217,15 +217,15 @@ class Product extends StatelessWidget {
             ),
           ),
         ),
-        Text(" The Blue Banter Co.", style: TextStyle(fontSize: 16)),
+        const Text(" The Blue Banter Co.", style: TextStyle(fontSize: 16)),
         Text(
           productModel.title,
 
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         Text(
           "\$${productModel.price}",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
       ],
     );

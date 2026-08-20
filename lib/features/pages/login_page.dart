@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Login Page")),
+      appBar: AppBar(title: const Text("Login Page")),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
         child: Column(
@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Expanded(
@@ -53,8 +53,8 @@ class _LoginPageState extends State<LoginPage> {
                           Icon(Icons.language_rounded, size: 30),
                         ],
                       ),
-                      Text("Welcome Back", style: TextStyle(fontSize: 24)),
-                      SizedBox(height: 12),
+                      const Text("Welcome Back", style: TextStyle(fontSize: 24)),
+                      const SizedBox(height: 12),
 
                       TextFormField(
                         controller: emailController,
@@ -68,17 +68,17 @@ class _LoginPageState extends State<LoginPage> {
                         textInputAction: TextInputAction.search,
                         decoration: InputDecoration(
                           labelText: "Email",
-                          border: OutlineInputBorder(
+                          border: const OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.brown),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide(color: Colors.lightGreen),
+                            borderSide: const BorderSide(color: Colors.lightGreen),
                           ),
                         ),
                       ),
 
-                      SizedBox(height: 12),
+                      const SizedBox(height: 12),
                       TextFormField(
                         controller: passwordController,
                         validator: (value) {
@@ -95,17 +95,17 @@ class _LoginPageState extends State<LoginPage> {
                         ],
                         decoration: InputDecoration(
                           labelText: "Password",
-                          border: OutlineInputBorder(
+                          border: const OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.brown),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide(color: Colors.lightGreen),
+                            borderSide: const BorderSide(color: Colors.lightGreen),
                           ),
                         ),
                       ),
 
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -118,17 +118,17 @@ class _LoginPageState extends State<LoginPage> {
                                   isChecked = value ?? false;
                                 });
                               },
-                              child: Text("Remember me"),
+                              child: const Text("Remember me"),
                             ),
                           ),
-                          Text(
+                          const Text(
                             "Forget password?",
                             style: TextStyle(fontSize: 16, color: Colors.blue),
                           ),
                         ],
                       ),
 
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -141,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
                                     behavior: SnackBarBehavior.floating,
                                     content: Text(
                                       emailController.text,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 30,
                                         color: Colors.white,
                                       ),
@@ -155,30 +155,30 @@ class _LoginPageState extends State<LoginPage> {
                                 );
                               }
                             },
-                            child: Text("Sign in"),
+                            child: const Text("Sign in"),
                           ),
                           ElevatedButton(
                             onPressed: () {
                               emailController.clear();
                               passwordController.clear();
                             },
-                            child: Text("Clear the field data"),
+                            child: const Text("Clear the field data"),
                           ),
                         ],
                       ),
-                      SizedBox(height: 25),
+                      const SizedBox(height: 25),
 
-                      Divider(),
-                      SizedBox(height: 25),
+                      const Divider(),
+                      const SizedBox(height: 25),
 
-                      Text(
+                      const Text(
                         "New to Verve",
                         style: TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
 
                       SizedBox(
                         width: double.infinity,
@@ -187,7 +187,7 @@ class _LoginPageState extends State<LoginPage> {
                             Navigator.pushNamed(context, '/register');
                           },
 
-                          child: Text(
+                          child: const Text(
                             "Register",
                             style: TextStyle(
                               fontSize: 20,
@@ -201,7 +201,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,
               spacing: 10,

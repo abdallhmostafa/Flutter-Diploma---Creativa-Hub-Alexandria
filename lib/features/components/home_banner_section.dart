@@ -7,7 +7,12 @@ class HomeBannerSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/images/home_card.png"),
+        ),
+      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
@@ -15,7 +20,7 @@ class HomeBannerSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Hot Drops",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -23,7 +28,7 @@ class HomeBannerSection extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              Text(
+              const Text(
                 "Must have Sneakers",
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
@@ -31,13 +36,13 @@ class HomeBannerSection extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               ActionChip(
-                label: Text("Find out"),
+                label: const Text("Find out"),
                 onPressed: () {},
                 backgroundColor: Colors.black,
-                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                labelStyle: TextStyle(color: Colors.white),
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                labelStyle: const TextStyle(color: Colors.white),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadiusGeometry.circular(20),
                 ),
@@ -46,11 +51,6 @@ class HomeBannerSection extends StatelessWidget {
           ),
           Expanded(child: Image.asset("assets/images/shoe img.png")),
         ],
-      ),
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/images/home_card.png"),
-        ),
       ),
     );
   }

@@ -31,7 +31,7 @@ class _RegisterPageState extends State<RegisterPage> {
     log("This from Register Page");
 
     return Scaffold(
-      appBar: AppBar(title: Text("Register Page")),
+      appBar: AppBar(title: const Text("Register Page")),
       body: Form(
         key: _formKey,
         child: Padding(
@@ -44,7 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     spacing: 16,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Expanded(
@@ -63,7 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           Icon(Icons.language_rounded, size: 30),
                         ],
                       ),
-                      Text("I'am New Here", style: TextStyle(fontSize: 24)),
+                      const Text("I'am New Here", style: TextStyle(fontSize: 24)),
                       RegisterTextFormField(
                         labelText: "First name",
                         controller: _firstNameController,
@@ -98,7 +98,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         icon: Icons.access_alarms_sharp,
                       ),
 
-                      Divider(),
+                      const Divider(),
 
                       CheckboxMenuButton(
                         style: ButtonStyle(
@@ -114,7 +114,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             _isChecked = value ?? false;
                           });
                         },
-                        child: Text("I agree to the terms and conditions"),
+                        child: const Text("I agree to the terms and conditions"),
                       ),
                       Align(
                         alignment: Alignment.centerRight,
@@ -122,7 +122,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           onPressed: () {
                             Navigator.maybePop(context);
                           },
-                          child: Text(
+                          child: const Text(
                             "Don't have an account?",
                             style: TextStyle(color: Colors.blue),
                           ),
@@ -141,7 +141,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     behavior: SnackBarBehavior.floating,
                                     content: Text(
                                       _emailController.text,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 16,
                                         color: Colors.white,
                                       ),
@@ -155,7 +155,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 );
                               }
                             },
-                            child: Text("Sign in"),
+                            child: const Text("Sign in"),
                           ),
                           ElevatedButton(
                             onPressed: () {
@@ -164,7 +164,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               _firstNameController.clear();
                               _lastNameController.clear();
                             },
-                            child: Text("Clear the field data"),
+                            child: const Text("Clear the field data"),
                           ),
                         ],
                       ),
@@ -172,7 +172,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
-              Wrap(
+              const Wrap(
                 alignment: WrapAlignment.center,
                 spacing: 5,
                 children: [
@@ -235,10 +235,10 @@ class RegisterTextFormField extends StatelessWidget {
 
       decoration: InputDecoration(
         labelText: labelText,
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(color: Colors.lightGreen),
+          borderSide: const BorderSide(color: Colors.lightGreen),
         ),
       ),
     );
@@ -266,10 +266,10 @@ class RegisterTextFormFieldWithIcon extends StatelessWidget {
 
       decoration: InputDecoration(
         labelText: lableText,
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(color: Colors.lightGreen),
+          borderSide: const BorderSide(color: Colors.lightGreen),
         ),
       ),
     );

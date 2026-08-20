@@ -19,7 +19,7 @@ class HomeCategorySection extends StatelessWidget {
     return SizedBox(
       height: 50,
       child: ListView.separated(
-        separatorBuilder: (context, index) => SizedBox(width: 10),
+        separatorBuilder: (context, index) => const SizedBox(width: 10),
         itemCount: listOfCategoryName.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, i) {
@@ -44,7 +44,7 @@ class ChoiseChipCategory extends StatelessWidget {
 
       label: Text(chipName),
       backgroundColor: theme == Brightness.dark ? Colors.black : Colors.white,
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusGeometry.circular(20),
         side: BorderSide(

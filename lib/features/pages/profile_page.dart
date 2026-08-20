@@ -9,37 +9,37 @@ class ProfilePage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          ProfileLeading(),
-          SizedBox(height: 10),
+          const ProfileLeading(),
+          const SizedBox(height: 10),
           ListTile(
             onTap: () {},
-            leading: Icon(Icons.email),
-            title: Text("Email"),
-            subtitle: Text("abdallhelrabiey255@gamil.com"),
+            leading: const Icon(Icons.email),
+            title: const Text("Email"),
+            subtitle: const Text("abdallhelrabiey255@gamil.com"),
           ),
           ListTile(
             onTap: () {},
-            leading: Icon(Icons.mobile_screen_share_outlined),
-            title: Text("Mobile"),
-            subtitle: Text("01006257074"),
+            leading: const Icon(Icons.mobile_screen_share_outlined),
+            title: const Text("Mobile"),
+            subtitle: const Text("01006257074"),
           ),
           ListTile(
             onTap: () {},
-            leading: Icon(Icons.facebook),
-            title: Text("Facebook"),
-            subtitle: Text("abdallhelrabiey255@gamil"),
+            leading: const Icon(Icons.facebook),
+            title: const Text("Facebook"),
+            subtitle: const Text("abdallhelrabiey255@gamil"),
           ),
           ListTile(
             onTap: () {},
-            leading: Icon(Icons.beach_access),
-            title: Text("Behance"),
-            subtitle: Text("xyz.com"),
+            leading: const Icon(Icons.beach_access),
+            title: const Text("Behance"),
+            subtitle: const Text("xyz.com"),
           ),
           ListTile(
             onTap: () {},
-            leading: Icon(Icons.email),
-            title: Text("Email"),
-            subtitle: Text("abdallhelrabiey255@gamil.com"),
+            leading: const Icon(Icons.email),
+            title: const Text("Email"),
+            subtitle: const Text("abdallhelrabiey255@gamil.com"),
           ),
         ],
       ),
@@ -53,8 +53,8 @@ class ProfileLeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(20),
+      decoration: const BoxDecoration(
         color: Colors.blue,
         gradient: LinearGradient(
           begin: Alignment.topRight,
@@ -69,7 +69,7 @@ class ProfileLeading extends StatelessWidget {
       child: Column(
         spacing: 20,
         children: [
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -77,17 +77,17 @@ class ProfileLeading extends StatelessWidget {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                child: Icon(Icons.arrow_back, size: 25, color: Colors.white),
+                child: const Icon(Icons.arrow_back, size: 25, color: Colors.white),
               ),
-              Text(
+              const Text(
                 "Profile",
                 style: TextStyle(color: Colors.white, fontSize: 24),
               ),
-              Icon(Icons.settings, size: 25, color: Colors.white),
+              const Icon(Icons.settings, size: 25, color: Colors.white),
             ],
           ),
 
-          CircleAvatar(
+          const CircleAvatar(
             backgroundColor: Colors.white,
             radius: 50,
             child: CircleAvatar(
@@ -97,7 +97,7 @@ class ProfileLeading extends StatelessWidget {
               ),
             ),
           ),
-          Column(
+          const Column(
             children: [
               Text(
                 "Abdallh Mostafa",
@@ -109,7 +109,7 @@ class ProfileLeading extends StatelessWidget {
               ),
             ],
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("1000", style: TextStyle(color: Colors.white, fontSize: 18)),

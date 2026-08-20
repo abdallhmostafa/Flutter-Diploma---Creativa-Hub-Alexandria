@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -13,8 +15,11 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((e) async {
-      await Future.delayed(Duration(milliseconds: 1000));
-      Navigator.pushReplacementNamed(context, '/login');
+      await Future.delayed(const Duration(milliseconds: 1000));
+      if (mounted) {
+        
+      unawaited(Navigator.pushReplacementNamed(context, '/login'));
+      }
     });
   }
 
@@ -23,9 +28,9 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: Colors.deepPurpleAccent,
       body:
-          Center(
+          const Center(
                 child: Text(
-                  "VERVE",
+                  'VERVE',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w900,
@@ -34,7 +39,7 @@ class _SplashPageState extends State<SplashPage> {
                 ),
               )
               .animate()
-              .fadeIn(duration: Duration(milliseconds: 300))
+              .fadeIn(duration: const Duration(milliseconds: 300))
               .slideX(begin: -0.5, end: 0),
     );
   }

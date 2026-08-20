@@ -7,7 +7,7 @@ import 'package:lessons_app/features/pages/register_page.dart';
 import 'package:lessons_app/features/pages/splash_page.dart';
 
 void main(List<String> args) {
-  runApp(VerveApp());
+  runApp(const VerveApp());
 }
 
 class VerveApp extends StatelessWidget {
@@ -19,20 +19,20 @@ class VerveApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "splash",
       routes: {
-        "/": (context) => HomePage(),
-        "splash": (context) => SplashPage(),
-        "/login": (context) => LoginPage(),
-        "/register": (context) => RegisterPage(),
-        "/profile": (context) => ProfilePage(),
+        "/": (context) => const HomePage(),
+        "splash": (context) => const SplashPage(),
+        "/login": (context) => const LoginPage(),
+        "/register": (context) => const RegisterPage(),
+        "/profile": (context) => const ProfilePage(),
       },
 
       onUnknownRoute: (settings) =>
-          MaterialPageRoute(builder: (context) => NotFoundPage()),
+          MaterialPageRoute(builder: (context) => const NotFoundPage()),
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.grey[50],
         colorSchemeSeed: Colors.deepPurpleAccent,
         brightness: Brightness.light,
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.deepPurpleAccent,
           elevation: 0,
           titleTextStyle: TextStyle(
@@ -46,7 +46,7 @@ class VerveApp extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.deepPurpleAccent,
             alignment: Alignment.center,
-            textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             foregroundColor: Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
@@ -56,7 +56,7 @@ class VerveApp extends StatelessWidget {
       ),
       darkTheme: ThemeData(
         scaffoldBackgroundColor: Colors.grey[900],
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.deepPurpleAccent,
           elevation: 0,
           titleTextStyle: TextStyle(
@@ -72,7 +72,7 @@ class VerveApp extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.deepPurpleAccent,
             alignment: Alignment.center,
-            textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             foregroundColor: Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
